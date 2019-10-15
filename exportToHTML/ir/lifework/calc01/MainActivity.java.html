@@ -1,0 +1,194 @@
+<html>
+<head>
+<title>MainActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #000080; font-weight: bold;}
+.s1 { color: #000000;}
+.s2 { color: #008000; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span>ir.lifework.calc01;
+
+<span class="s0">import </span>androidx.appcompat.app.AppCompatActivity;
+
+<span class="s0">import </span>android.os.Bundle;
+<span class="s0">import </span>android.view.View;
+<span class="s0">import </span>android.widget.Button;
+<span class="s0">import </span>android.widget.TextView;
+
+<span class="s0">public class </span>MainActivity <span class="s0">extends </span>AppCompatActivity {
+
+    TextView _displayView;
+    Button _0Button;
+    Button _1Button;
+    Button _2Button;
+    Button _3Button;
+    Button _4Button;
+    Button _5Button;
+    Button _6Button;
+    Button _7Button;
+    Button _8Button;
+    Button _9Button;
+    Button _clearButton;
+    Button _multiplyButton;
+    Button _divideButton;
+    Button _plusButton;
+    Button _minusButton;
+    Button _equalButton;
+    String _operand;
+    String _firstNumber;
+    String _secondNumber;
+
+
+
+    @Override
+    <span class="s0">protected void </span>onCreate(Bundle savedInstanceState) {
+        <span class="s0">super</span>.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        _displayView = findViewById(R.id._display_view);
+        _0Button = findViewById(R.id._0_button);
+        _1Button = findViewById(R.id._1_button);
+        _2Button = findViewById(R.id._2_button);
+        _3Button = findViewById(R.id._3_button);
+        _4Button = findViewById(R.id._4_button);
+        _5Button = findViewById(R.id._5_button);
+        _6Button = findViewById(R.id._6_button);
+        _7Button = findViewById(R.id._7_button);
+        _8Button = findViewById(R.id._8_button);
+        _9Button = findViewById(R.id._9_button);
+        _clearButton = findViewById(R.id._clear_button);
+        _multiplyButton = findViewById(R.id._multiply_button);
+        _divideButton = findViewById(R.id._divide_button);
+        _plusButton = findViewById(R.id._plus_button);
+        _minusButton = findViewById(R.id._minus_button);
+        _equalButton = findViewById(R.id._equal_button);
+
+        _0Button.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
+            @Override
+            <span class="s0">public void </span>onClick(View view) {
+                _displayView.append(<span class="s2">&quot;0&quot;</span>);
+            }
+        });
+        _1Button.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
+            @Override
+            <span class="s0">public void </span>onClick(View view) {
+                _displayView.append(<span class="s2">&quot;1&quot;</span>);
+            }
+        });
+        _2Button.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
+            @Override
+            <span class="s0">public void </span>onClick(View view) {
+                _displayView.append(<span class="s2">&quot;2&quot;</span>);
+            }
+        });
+        _3Button.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
+            @Override
+            <span class="s0">public void </span>onClick(View view) {
+                _displayView.append(<span class="s2">&quot;3&quot;</span>);
+            }
+        });
+        _4Button.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
+            @Override
+            <span class="s0">public void </span>onClick(View view) {
+                _displayView.append(<span class="s2">&quot;4&quot;</span>);
+            }
+        });
+        _5Button.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
+            @Override
+            <span class="s0">public void </span>onClick(View view) {
+                _displayView.append(<span class="s2">&quot;5&quot;</span>);
+            }
+        });
+        _6Button.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
+            @Override
+            <span class="s0">public void </span>onClick(View view) {
+                _displayView.append(<span class="s2">&quot;6&quot;</span>);
+            }
+        });
+        _7Button.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
+            @Override
+            <span class="s0">public void </span>onClick(View view) {
+                _displayView.append(<span class="s2">&quot;7&quot;</span>);
+            }
+        });
+        _8Button.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
+            @Override
+            <span class="s0">public void </span>onClick(View view) {
+                _displayView.append(<span class="s2">&quot;8&quot;</span>);
+            }
+        });
+        _9Button.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
+            @Override
+            <span class="s0">public void </span>onClick(View view) {
+                _displayView.append(<span class="s2">&quot;9&quot;</span>);
+            }
+        });
+        _clearButton.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
+            @Override
+            <span class="s0">public void </span>onClick(View view) {
+                _displayView.setText(<span class="s2">&quot;&quot;</span>);
+            }
+        });
+        _multiplyButton.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
+            @Override
+            <span class="s0">public void </span>onClick(View view) {
+                _firstNumber = _displayView.getText().toString();
+                _operand = <span class="s2">&quot;×&quot;</span>;
+                _displayView.setText(<span class="s2">&quot;&quot;</span>);
+            }
+        });
+        _divideButton.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
+            @Override
+            <span class="s0">public void </span>onClick(View view) {
+                _firstNumber = _displayView.getText().toString();
+                _operand = <span class="s2">&quot;÷&quot;</span>;
+                _displayView.setText(<span class="s2">&quot;&quot;</span>);
+            }
+        });
+        _plusButton.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
+            @Override
+            <span class="s0">public void </span>onClick(View view) {
+                _firstNumber = _displayView.getText().toString();
+                _operand = <span class="s2">&quot;+&quot;</span>;
+                _displayView.setText(<span class="s2">&quot;&quot;</span>);
+            }
+        });
+        _minusButton.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
+            @Override
+            <span class="s0">public void </span>onClick(View view) {
+                _firstNumber = _displayView.getText().toString();
+                _operand = <span class="s2">&quot;-&quot;</span>;
+                _displayView.setText(<span class="s2">&quot;&quot;</span>);
+            }
+        });
+        _equalButton.setOnClickListener(<span class="s0">new </span>View.OnClickListener() {
+            @Override
+            <span class="s0">public void </span>onClick(View view) {
+                _secondNumber = _displayView.getText().toString();
+                <span class="s0">if </span>(_operand == <span class="s2">&quot;×&quot;</span>) {
+                    _displayView.setText(Integer.toString(Integer.parseInt(_firstNumber) * Integer.parseInt(_secondNumber)));
+                }
+                <span class="s0">else if </span>(_operand == <span class="s2">&quot;÷&quot;</span>) {
+                    _displayView.setText(Float.toString(Float.parseFloat(_firstNumber) / Float.parseFloat(_secondNumber)));
+                }
+                <span class="s0">else if </span>(_operand == <span class="s2">&quot;+&quot;</span>) {
+                    _displayView.setText(Integer.toString(Integer.parseInt(_firstNumber) + Integer.parseInt(_secondNumber)));
+                }
+                <span class="s0">else if </span>(_operand == <span class="s2">&quot;-&quot;</span>) {
+                    _displayView.setText(Integer.toString(Integer.parseInt(_firstNumber) - Integer.parseInt(_secondNumber)));
+                }
+            }
+        });
+    }
+}
+</pre>
+</body>
+</html>
