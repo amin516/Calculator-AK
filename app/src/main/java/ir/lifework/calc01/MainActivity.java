@@ -158,16 +158,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 _secondNumber = _displayView.getText().toString();
                 if (_operand == "×") {
-                    _displayView.setText(Integer.toString(Integer.parseInt(_firstNumber) * Integer.parseInt(_secondNumber)));
+                    _firstNumber = Float.toString(Float.parseFloat(_firstNumber) * Float.parseFloat(_secondNumber));
+                    _displayView.setText(_firstNumber);
                 }
                 else if (_operand == "÷") {
-                    _displayView.setText(Float.toString(Float.parseFloat(_firstNumber) / Float.parseFloat(_secondNumber)));
+                    _firstNumber = Float.toString(Float.parseFloat(_firstNumber) / Float.parseFloat(_secondNumber));
+                    _displayView.setText(_firstNumber);
                 }
                 else if (_operand == "+") {
-                    _displayView.setText(Integer.toString(Integer.parseInt(_firstNumber) + Integer.parseInt(_secondNumber)));
+                    _firstNumber = Float.toString(Float.parseFloat(_firstNumber) + Float.parseFloat(_secondNumber));
+                    _displayView.setText(_firstNumber);
                 }
                 else if (_operand == "-") {
-                    _displayView.setText(Integer.toString(Integer.parseInt(_firstNumber) - Integer.parseInt(_secondNumber)));
+                    _firstNumber = Float.toString(Float.parseFloat(_firstNumber) - Float.parseFloat(_secondNumber));
+                    _displayView.setText(_firstNumber);
                 }
             }
         });
