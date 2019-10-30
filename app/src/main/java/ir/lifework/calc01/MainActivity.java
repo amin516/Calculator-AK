@@ -58,7 +58,9 @@ public class MainActivity extends AppCompatActivity {
         _0Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                _displayView.append("0");
+                if (!_displayView.getText().toString().equals("")){
+                    _displayView.append("0");
+                }
             }
         });
         _1Button.setOnClickListener(new View.OnClickListener() {
