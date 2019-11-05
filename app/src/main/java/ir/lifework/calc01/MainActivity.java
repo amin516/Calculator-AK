@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     String _operand;
     String _firstNumber;
     String _secondNumber;
+    boolean _equalButtonPressed;
 
 
 
@@ -129,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 _firstNumber = _displayView.getText().toString();
                 _operand = "×";
                 _displayView.setText("");
+                _equalButtonPressed = false;
             }
         });
         _divideButton.setOnClickListener(new View.OnClickListener() {
@@ -137,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
                 _firstNumber = _displayView.getText().toString();
                 _operand = "÷";
                 _displayView.setText("");
+                _equalButtonPressed = false;
             }
         });
         _plusButton.setOnClickListener(new View.OnClickListener() {
@@ -145,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
                 _firstNumber = _displayView.getText().toString();
                 _operand = "+";
                 _displayView.setText("");
+                _equalButtonPressed = false;
             }
         });
         _minusButton.setOnClickListener(new View.OnClickListener() {
@@ -153,27 +157,34 @@ public class MainActivity extends AppCompatActivity {
                 _firstNumber = _displayView.getText().toString();
                 _operand = "-";
                 _displayView.setText("");
+                _equalButtonPressed = false;
             }
         });
         _equalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                _secondNumber = _displayView.getText().toString();
+                if (!_equalButtonPressed){
+                    _secondNumber = _displayView.getText().toString();
+                }
                 if (_operand == "×") {
                     _firstNumber = Float.toString(Float.parseFloat(_firstNumber) * Float.parseFloat(_secondNumber));
                     _displayView.setText(_firstNumber);
+                    _equalButtonPressed = true;
                 }
                 else if (_operand == "÷") {
                     _firstNumber = Float.toString(Float.parseFloat(_firstNumber) / Float.parseFloat(_secondNumber));
                     _displayView.setText(_firstNumber);
+                    _equalButtonPressed = true;
                 }
                 else if (_operand == "+") {
                     _firstNumber = Float.toString(Float.parseFloat(_firstNumber) + Float.parseFloat(_secondNumber));
                     _displayView.setText(_firstNumber);
+                    _equalButtonPressed = true;
                 }
                 else if (_operand == "-") {
                     _firstNumber = Float.toString(Float.parseFloat(_firstNumber) - Float.parseFloat(_secondNumber));
                     _displayView.setText(_firstNumber);
+                    _equalButtonPressed = true;
                 }
             }
         });
